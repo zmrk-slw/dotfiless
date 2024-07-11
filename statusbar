@@ -1,0 +1,23 @@
+#!/bin/sh
+
+dayanddate () {
+  LC_TIME="en_PH.UTF-8" date '+%G. %B. %e, %A'
+}
+
+battery () {
+  ~/.scripts/statusbarsetup/battery
+}
+
+wifi () {
+  ~/.scripts/statusbarsetup/wifi
+}
+
+timedate () {
+  date '+%I:%M:%S %p'
+}
+
+while :; do 
+        xsetroot -name "$(dayanddate)"";""$(battery)""$(wifi)"" $(timedate)"
+      sleep 1
+done
+    

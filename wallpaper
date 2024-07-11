@@ -1,0 +1,12 @@
+#!/bin/sh
+
+wallpaper=$(ls ~/Pictures/wallpapers | dmenu -i -l 50)
+
+if  [ -z "$wallpaper" ]; then
+  echo "No wallpaper selected."
+  exit 1
+else
+  feh --bg-fill ~/Pictures/wallpapers/"$wallpaper"
+fi
+
+
